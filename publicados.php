@@ -60,7 +60,7 @@ h3
         <div ng-repeat="sl in slides" class="item {{sl.esta}}">
                 
           <div class="col-md-4 col-md-offset-1">
-            <img src="<?php echo "http://localhost/promocion/php/imagenes/?uid={{sl.id_promo}}&tkn={{sl.estatus}}&sz=300" ?>" /> 
+            <img src="<?php echo "http://dersacom.com/promocion/php/imagenes/?uid={{sl.id_promo}}&tkn={{sl.estatus}}&sz=300" ?>" /> 
           </div>
           <div class="col-md-6">
             <span style="font-size: 5.9vw; color:#3c8dbc">{{ sl.clasificacion }}</span>
@@ -92,31 +92,15 @@ h3
       </div>
     </div>
   </div>
-  <div class="col-md-5">
 
-      <!-- www.TuTiempo.net - Ancho:454px - Alto:91px -->
-      <div id="TT_vCN111k1ESK94QIKjfuDjzDjjWuKTpQ2LYEt1syoa1jIm53o3">Pronóstico</div>
-      <script type="text/javascript" src="http://www.tutiempo.net/widget/eltiempo_vCN111k1ESK94QIKjfuDjzDjjWuKTpQ2LYEt1syoa1jIm53o3"></script>
+  <div class="col-md-5">
+	<div id="tyt_wdgt_1479522977289" style="overflow:hidden;width:700px;height:450px" data-options="color=gris&text=&content=1111111&temp_unit=c&wind_unit=kmh"><script src="http://tiempoytemperatura.es/widgets/js/biggest-6day/3530597/tyt_wdgt_1479522977289/?v=0"></script></div>
     
   </div>
-<!--   <object  width='700' height='400' id='flashLatestNews' classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'>
-<param name='movie' value='http://www.fifa.com/flash/widgets/newsreader/app.swf?lang='es'/>
-<param name='bgcolor' value='#ffffff'/>
-<param name='quality' value='high'/>
-<param name='wmode' value='transparent'/>
-<param name='flashvars' value='lang=es'>
-<embed width='700' height='400' flashvars='lang=es' wmode='transparent' quality='high' bgcolor='#ffffff' name='flashLatestNews' id='flashLatestNews' src=http://www.fifa.com/flash/widgets/newsreader/app.swf?lang='es type='application/x-shockwave-flash'/>
-</object> -->
-<!--   <div class="col-md-3">
-        <div id="divRss"></div>    
+  <div class="col-md-7">
+  	<iframe src="http://www.20minutos.com.mx/widgets/render/portada/6/" frameborder="0" height="300" width="600"></iframe>
   </div>
- -->
 
-<!--   <pre data-title="markup" class=" language-markup" style="position: absolute; margin-bottom: 650px">
-    <code class=" language-markup">
-
-    </code>
-  </pre> -->
 </body>
 <script type="text/javascript" src="js/publicados.js"></script>
 <script type="text/javascript" src="js/FeedEk.js"></script>
