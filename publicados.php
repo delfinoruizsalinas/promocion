@@ -59,23 +59,27 @@ h3
         
         <div ng-repeat="sl in slides" class="item {{sl.esta}}">
                 
-          <div class="col-md-4 col-md-offset-1">
-            <img src="<?php echo "http://dersacom.com/promocion/php/imagenes/?uid={{sl.id_promo}}&tkn={{sl.estatus}}&sz=300" ?>" /> 
+          <div class="col-md-3 col-md-offset-1">
+
+          <!-- <img src="http://localhost/promocion/php/imagenes/?uid={{sl.id_promo}}&tkn={{sl.estatus}}&sz=500"/>    
+           -->
+           <img src="http://dersacom.com/promocion/php/imagenes/?uid={{sl.id_promo}}&tkn={{sl.estatus}}&sz=500"/>    
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-md-offset-1">
             <span style="font-size: 5.9vw; color:#3c8dbc">{{ sl.clasificacion }}</span>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-md-offset-1">
             <span style="font-size: 2vw;">{{ sl.nombre_producto }}</span>
           </div>
-          <div class="col-md-6">
-            <span style="font-size: 2vw;">{{ sl.descripcion }}</span>
+          <div class="col-md-6 col-md-offset-1">
+            <span style="font-size: 2vw; color:blue">{{ sl.descripcion }}</span>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-md-offset-1">
             <span style="font-size: 2vw; color:#aed642">{{ sl.nombre_promocion }}</span>
           </div>
-          <div class="col-md-6">
-            <span style="font-size: 4vw; color:red">{{ sl.precio_venta | currency:"$":2}}</span>
+          <div class="col-md-6 col-md-offset-1">
+            <span style="font-size: 4vw; color:red">{{ sl.precio_venta  | currency:"$":2 }}</span>
+            <span style="font-size: 4vw; color:red">{{ sl.fecha }}</span>
         </div>
 
       </div>
@@ -93,13 +97,10 @@ h3
     </div>
   </div>
 
-  <div class="col-md-5">
-	<div id="tyt_wdgt_1479522977289" style="overflow:hidden;width:700px;height:450px" data-options="color=gris&text=&content=1111111&temp_unit=c&wind_unit=kmh"><script src="http://tiempoytemperatura.es/widgets/js/biggest-6day/3530597/tyt_wdgt_1479522977289/?v=0"></script></div>
-    
-  </div>
-  <div class="col-md-7">
+
+<!--   <div class="col-md-7">
   	<iframe src="http://www.20minutos.com.mx/widgets/render/portada/6/" frameborder="0" height="300" width="600"></iframe>
-  </div>
+  </div> -->
 
 </body>
 <script type="text/javascript" src="js/publicados.js"></script>

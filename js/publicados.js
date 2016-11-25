@@ -3,7 +3,9 @@ angular.module("MyFirstApp",[])
 .controller("FirstController",function($scope,$http){
 
 	$scope.slides = [];
-	$scope.rss = [];
+	//$scope.rss = [];
+
+	
 
 	$http.get("./php/getPromociones.php").success(function(data){// cargar lista de usuarios 
 	if(data[0].id_promo >=1){ //excepxcion cunado esta vacia la tabla
@@ -19,6 +21,49 @@ angular.module("MyFirstApp",[])
 		 pre = $scope.slides[0].precio_venta;
 		 est = $scope.slides[0].estatus;
 
+		 //azteca deportes
+		 $http.get("https://api.rss2json.com/v1/api.json?rss_url=http://www.aztecanoticias.com.mx/rss/entretenimiento.xml")
+		.success(function(data){ 
+			deportes = {"clasificacion" : data.items[0].categories[0], 'descripcion':data.feed.description, 'id_promo':15 ,'imagen': data.feed.image, 'nombre_producto': data.items[0].content, 'nombre_promocion':data.items[0].description, 'fecha': data.items[0].pubDate,'estatus': 2};
+			$scope.slides.push(deportes);
+			//console.log($scope.slides);
+		})
+		.error(function() {
+		});
+
+		 //azteca finanzas
+		$http.get("https://api.rss2json.com/v1/api.json?rss_url=http://www.aztecanoticias.com.mx/rss/finanzas.xml")
+		.success(function(data){ 
+			finanzas = {"clasificacion" : data.items[0].categories[0], 'descripcion':data.feed.description, 'id_promo':16 ,'imagen': data.feed.image, 'nombre_producto': data.items[0].content, 'nombre_promocion':data.items[0].description, 'fecha': data.items[0].pubDate,'estatus': 2};
+			$scope.slides.push(finanzas);
+			//console.log($scope.slides);
+		})
+		.error(function() {
+		});
+
+		//azteca salud
+		$http.get("https://api.rss2json.com/v1/api.json?rss_url=http://www.aztecanoticias.com.mx/rss/salud.xml")
+		.success(function(data){ 
+			salud = {"clasificacion" : data.items[0].categories[0], 'descripcion':data.feed.description, 'id_promo':17 ,'imagen': data.feed.image, 'nombre_producto': data.items[0].content, 'nombre_promocion':data.items[0].description, 'fecha': data.items[0].pubDate,'estatus': 2};
+			$scope.slides.push(salud);
+			//console.log($scope.slides);
+		})
+		.error(function() {
+		});
+
+		
+		// Estados
+		$http.get("https://api.rss2json.com/v1/api.json?rss_url=http://www.aztecanoticias.com.mx/rss/todas.xml")
+		.success(function(data){ 
+			segundoDato = {"clasificacion" : data.items[0].categories[0], 'descripcion':data.feed.description, 'id_promo':18 ,'imagen': data.feed.image, 'nombre_producto': data.items[0].content, 'nombre_promocion':data.items[0].description, 'fecha': data.items[0].pubDate,'estatus': 2};
+			$scope.slides.push(segundoDato);
+			//console.log($scope.slides);
+		})
+		.error(function() {
+		});
+
+
+
 		primerDato = {"esta": "active", "clasificacion" : a, 'descripcion':d,'id_promo':id, 'imagen': ima, 'nombre_producto': prod, 'nombre_promocion':prom, 'precio_venta': pre, 'estatus': est}
 		//console.log(primerDato);
 		$scope.slides.splice(0,1,primerDato);
@@ -26,36 +71,6 @@ angular.module("MyFirstApp",[])
 	}).error(function() {});
 
 
-	// $http.get("https://es-us.deportes.yahoo.com/f%C3%BAtbol/mexicano/?format=rss").success(function(data){// cargar lista de usuarios 
-	// console.log(data);
-	// }).error(function() {});
-
-	// $http.get("https://es-us.deportes.yahoo.com/f%C3%BAtbol/mexicano/?format=rss")
-	// 	.success(function(data){ 
-	// 		console.log(data);
-	// 		//$scope.posts = data;
-	// 	})
-	// 	.error(function() {
-	// 		/* Act on the event */
-	// 	});
-	
-	// var Feed = require('rss-to-json');
- 
-	// Feed.load('https://codek.tv/feed/', function(err, rss){
-	//     console.log(rss);
-	// });
 
 
 });
-
-  // function loadFeed(){ // wrapper function
-  //   $('#divRss').FeedEk({
-  //    FeedUrl : 'https://es-us.deportes.yahoo.com/f%C3%BAtbol/mexicano/?format=rss',
-  //    MaxCount : 3,
-  //    ShowDesc : true,
-  //    ShowPubDate: true
-  //   }); 
-  // } // /wrapper
-  // loadFeed();
-  // setInterval(loadFeed, 64 * 1000 );
-
